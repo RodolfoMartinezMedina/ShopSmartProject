@@ -289,7 +289,8 @@ $(function() {
 
             $node = $('<li><div class="thumbnail"><div class="imgWrapper"><img /></div><div class="caption"><h4 class="code"></h4></div></div></li>');
             $node.find("img").attr("src", canvas.toDataURL());
-            $node.find("h4.code").html(`<a href=https://api.bestbuy.com/v1/products(upc=${code})?format=json&apiKey=9meb8xuge2ua3355aph7t7ej>here</a>`);
+           // $node.find("h4.code").html(`<a href=https://api.bestbuy.com/v1/products(upc=${code})?format=json&apiKey=9meb8xuge2ua3355aph7t7ej>here</a>`);
+             $node.find("div.thumbnail").html(`<a href=https://api.bestbuy.com/v1/products(upc=${code})?format=json&apiKey=9meb8xuge2ua3355aph7t7ej>here</a>`);
             //debug
             console.log(code);
             //
