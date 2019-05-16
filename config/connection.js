@@ -6,7 +6,7 @@ const connection = mysql.createConnection({
   // port: 8889,
   port: 3306,
   user: 'root',
-  password: 'root',
+  password: 'Chidori@mysql',
   database: 'shopsmart_db'
 });
 
