@@ -1,14 +1,14 @@
 // Set up MySQL connection.
 const mysql = require('mysql');
 
-let connection = mysql.createConnection({
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "Apiah#1992",
-    database: "bestBuy_product_db"
-  });
-  app.connection = connection;
+const connection = mysql.createConnection({
+  host: 'localhost',
+  // port: 8889,
+  port: 3306,
+  user: 'root',
+  password: 'root',
+  database: 'shopsmart_db'
+});
 
 // Make connection.
 connection.connect(function(err) {
@@ -21,7 +21,3 @@ connection.connect(function(err) {
 
 // Export connection for our ORM to use.
 module.exports = connection;
-// Configure MySQL connection
-
-
-//Establish MySQL connection
