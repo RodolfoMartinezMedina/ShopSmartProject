@@ -1,14 +1,16 @@
 // Set up MySQL connection.
 const mysql = require('mysql');
+require("dotenv").config;
+// Create the MySQL connection object
+var connection;
 
-const connection = mysql.createConnection({
-  host: 'localhost',
-  // port: 8889,
-  port: 3306,
-  user: 'root',
-  password: 'Chidori@mysql',
-  database: 'shopsmart_db'
-});
+if (process.env.JAWSDB_URL) {
+	// DB is JawsDB on Heroku
+	connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+	// DB is local on localhost
+
+};
 
 // Make connection.
 connection.connect(function(err) {
