@@ -19,9 +19,16 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 // Import routes and give the server access to them.
-const routes = require('./controllers/shopSmartController.js');
 
-app.use(routes);
+//These 2 were commented out - 
+// const routes = require('./controllers/shopSmartController.js');
+
+// app.use(routes);
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*"); //this line will add a header which will enable CORS
+  next();
+});
+
 
 app.listen(PORT, function() {
   console.log('App now listening at localhost:' + PORT);
