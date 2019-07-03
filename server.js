@@ -1,28 +1,30 @@
-const express = require('express');
+const app = require("./app");
 
-// const PORT = process.env.PORT || 3000;
-const PORT = process.env.PORT || 8080;
+const port = process.env.PORT || 3306;
 
-const app = express();
+var mysql = require("mysql");
 
-// Serve static content for the app from the 'public' directory in the application directory.
-app.use(express.static('public'));
-
-// Parse request body as JSON
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-// Set Handlebars.
-const exphbs = require('express-handlebars');
-
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
-app.set('view engine', 'handlebars');
-
-// Import routes and give the server access to them.
-const routes = require('./controllers/shopSmartController.js');
-
-app.use(routes);
-
-app.listen(PORT, function() {
-  console.log('App now listening at localhost:' + PORT);
+var connection = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "root",
+  database: "loginDB"
 });
+
+// Make connection.
+connection.connect(function(err) {
+  if (err) {
+    console.error("error connecting: " + err.stack);
+    return;
+  }
+  console.log("connected as id " + connection.threadId);
+});
+
+require("./routes/html-routes")(app);
+
+require("./routes/api-routes")(app, connection);
+
+app.listen(port, function() {
+  console.log("Express server listening on port " + port);
+});
+// module.exports = connection;

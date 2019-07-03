@@ -1,20 +1,21 @@
 {
-  "name": "ProjectNumber2",
+  "name": "02-jwt-express-student",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "watch": "npx nodemon server.js",
+    "start": "npm run watch",
+    "build": "rm -rf node_modules && npm i"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "express-handlebars": "^3.1.0",
-    "axios": "^0.18.0",
-    "dotenv": "^8.0.0",
+    "express-http-proxy": "^1.4.0",
+    "jsonwebtoken": "^8.3.0",
     "mysql": "^2.17.1"
   }
 }
