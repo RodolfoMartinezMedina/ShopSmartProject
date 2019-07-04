@@ -1,3 +1,5 @@
+const app = require("./app");
+
 const express = require('express');
 
 // const PORT = process.env.PORT || 3000;
@@ -29,6 +31,9 @@ app.use(function(req, res, next) {
   next();
 });
 
+require("./routes/html-routes")(app);
+
+require("./routes/api-routes")(app, connection);
 
 app.listen(PORT, function() {
   console.log('App now listening at localhost:' + PORT);
