@@ -1,5 +1,8 @@
 body {
     font-size: .875rem;
+    /* background: repeating-linear-gradient(90deg, rgba(255, 0, 0, 0.5), rgba(255, 255, 0, 0.5), rgba(255, 150, 0, 0.5), rgba(0, 255, 0, 0.5), rgba(0, 0, 255, 0.5)); */
+    background-image: url(/wallpaper.jpg);
+    padding: 40px;
   }
   
   .feather {
@@ -11,9 +14,51 @@ body {
   /*
    * Sidebar
    */
+
+    #login-container {
+      margin: auto;
+      width: 50%;
+      min-width: 500px;
+
+      
+    }
+    #login-box{
+      background: white;
+      padding: 20px;
+    }
+
+    #login-button{
+      margin: auto;
+    }
+
+    #login-form{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
   
+   table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+   }
+
+   td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+   }
+
+   tr:nth-child(even) {
+    background-color: #dddddd;
+   }
+  .shoppingCartPane {
+    height: 580px;
+    background: rgb(164, 189, 187);
+  }
+
   .sidebar {
-    position: fixed;
+    position:relative;
     top: 0;
     bottom: 0;
     left: 0;
@@ -113,6 +158,9 @@ body {
 
 h1, h2, h3, h4 {
   font-family: "Cabin Condensed", sans-serif;
+      margin: auto;
+      width: 50%;
+      min-width: 500px;
 }
 
 header {
@@ -148,8 +196,9 @@ footer {
 }
 
 #interactive.viewport {
-  width: 640px;
-  height: 480px;
+      margin: auto;
+      width: 50%;
+      min-width: 500px;
 }
 
 
@@ -402,7 +451,7 @@ i.icon-24-scan {
 li {
   padding: 5px;
   margin: 5px;
-  background: #faebd7;
+  //background: #faebd7;
 }
 
 .label {
